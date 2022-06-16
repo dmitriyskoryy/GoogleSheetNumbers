@@ -1,17 +1,17 @@
-from django.contrib.postgres.fields import ArrayField
+
 from django.db import models
 
 
 class Order(models.Model):
-    """Заказы"""
+    """Таблица Заказы в БД"""
 
 
-    number = models.TextField(verbose_name="№")
+    number = models.SmallIntegerField(verbose_name="№")
 
-    orderNumber = models.TextField(verbose_name="заказ №")
+    orderNumber = models.CharField(max_length=128, verbose_name="заказ №")
 
-    price = models.DecimalField(max_digits=20, decimal_places=2, verbose_name="стоимость,$")
+    price = models.CharField(max_length=128, verbose_name="стоимость,$")
 
-    priceConvert = models.DecimalField(max_digits=20, decimal_places=2, verbose_name="стоимость,₽", default=0)
+    priceConvert = models.CharField(max_length=128, verbose_name="стоимость в руб.")
 
-    deliveryTime = models.DateField(verbose_name="срок поставки")
+    deliveryTime = models.CharField(max_length=10, verbose_name="срок поставки")

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GoogleSheets</title>
+</head>
+<body>
+    <form method="GET">
+        {% csrf_token %}
+        <button name="update_data" value="update_data">Обновить</button>
+    </form>
+
+    <table border="1" width="100%" cellpadding="5">
+        {% if orderlist %}
+        <tr class="title-tb">
+            <th>№</th>
+            <th>заказ №</th>
+            <th>стоимость,$</th>
+            <th>стоимость в руб.</th>
+            <th>срок поставки</th>
+        </tr>
+        {% endif %}
+
+        {% for order in orderlist %}
+            <tr class="row-tb">
+                <th>{{ order.number }}</th>
+                <th>{{ order.orderNumber }}</th>
+                <th>{{ order.price }}</th>
+                <th>{{ order.priceConvert }}</th>
+                <th>{{ order.deliveryTime }}</th>
+            </tr>
+        {% empty %}
+            <h3>Заказов нет</h3>
+        {% endfor %}
+
+    </table>
+
+     <style type="text/css">
+        .title-tb {
+            background: #060606;
+            color: white;
+        }
+        .row-tb {
+            background: #E9F2FF;
+        }
+     </style>
+</body>
+</html>
