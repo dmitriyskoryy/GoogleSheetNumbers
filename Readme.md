@@ -5,6 +5,8 @@
 ### Google Sheets документ: https://docs.google.com/spreadsheets/d/1AEVkEYg_3Q2Z-qk2QvHAx2qIqEbLwfqhXAvGtohdnUA/edit?usp=sharing
 Проект выполнен на Python/Django. Чтобы проверить его работу, 
 необходимо:
+ - скачать и установить PostgreSQL 
+(создать БД с именем "postgres", пользователь "postgres", пароль "1")
  - скачать проект с Github на ПК
  - перейти в директорию ..\testnumbersss\project\googlesheet
  - открыть файл config.py
