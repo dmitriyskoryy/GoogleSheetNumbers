@@ -20,7 +20,7 @@ def get_deadline_orders():
 
 def send_message_in_telegram(order):
     """Функция отправки сообщения в телеграм"""
-    chatId = '915838357'
+    chatId = 'ваш id_chat'
     text = f"deadline: заказ № {order.orderNumber}, стоимость {order.price}$,  срок поставки {order.deliveryTime}"
     bot.send_message(chatId, text=text)
 
