@@ -3,10 +3,11 @@
 from datetime import datetime
 import telebot
 
+from .config import TOKEN, ID_CHAT
 from .models import Order
 
 
-token = "ваш токен"
+token = TOKEN
 bot = telebot.TeleBot(token)
 
 def get_deadline_orders():
@@ -20,7 +21,7 @@ def get_deadline_orders():
 
 def send_message_in_telegram(order):
     """Функция отправки сообщения в телеграм"""
-    chatId = 'ваш id_chat'
+    chatId = ID_CHAT
     text = f"deadline: заказ № {order.orderNumber}, стоимость {order.price}$,  срок поставки {order.deliveryTime}"
     bot.send_message(chatId, text=text)
 
